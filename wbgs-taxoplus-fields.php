@@ -19,38 +19,38 @@ if (!class_exists('WBGS_TaxoPlus')) {
 
         public function __construct() {
 
-            add_action('admin_enqueue_scripts',[$this,'wbgs_enqueue_admin_scripts']);
+            // add_action('admin_enqueue_scripts',[$this,'wbgs_enqueue_admin_scripts']);
 
         }
 
 
         //include the css using js and css for admin side
-        public function wbgs_enqueue_admin_scripts() {
+        // public function wbgs_enqueue_admin_scripts() {
 
-            // Enqueue media uploader
-            // wp_enqueue_media();
-            // // Enqueue your JS file
-            // wp_enqueue_script(
-            //     'wbgs-admin-js',
-            //     plugin_dir_url(__FILE__) . 'assets/js/wbgs-main.js',
-            //     ['jquery'],
-            //     true
-            // );
-            // // Localize the script to pass PHP data to JS
-            //  wp_localize_script('wbgs-admin-js', 'wbgs_data', [
-            //     'ajaxurl' => admin_url('admin-ajax.php'),
-            //     'nonce'   => wp_create_nonce('wbgs_nonce')
-            // ]);
-            // Enqueue CSS
-            // wp_enqueue_style(
-            //     'wbgs-admin-css',
-            //     // plugin_dir_url(__FILE__) . 'assets/css/wbgs-styles.css',
-            //     [],
-            //     null // version (you can specify a version if needed)
-            // );
+        //     // Enqueue media uploader
+        //     // wp_enqueue_media();
+        //     // // Enqueue your JS file
+        //     // wp_enqueue_script(
+        //     //     'wbgs-admin-js',
+        //     //     plugin_dir_url(__FILE__) . 'assets/js/wbgs-main.js',
+        //     //     ['jquery'],
+        //     //     true
+        //     // );
+        //     // // Localize the script to pass PHP data to JS
+        //     //  wp_localize_script('wbgs-admin-js', 'wbgs_data', [
+        //     //     'ajaxurl' => admin_url('admin-ajax.php'),
+        //     //     'nonce'   => wp_create_nonce('wbgs_nonce')
+        //     // ]);
+        //     // Enqueue CSS
+        //     // wp_enqueue_style(
+        //     //     'wbgs-admin-css',
+        //     //     // plugin_dir_url(__FILE__) . 'assets/css/wbgs-styles.css',
+        //     //     [],
+        //     //     null // version (you can specify a version if needed)
+        //     // );
         
         
-        }
+        // }
 
     }
 
