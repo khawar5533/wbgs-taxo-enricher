@@ -1,11 +1,11 @@
 <?php
 /**
 * Plugin Name: Taxonomy Enricher
-* Plugin URI: https://SimpliPlugin.com/taxonomy-enricher
+* Plugin URI: https://www.webbuggs.com/
 * Description: Adds short description and gallery image fields to all default and custom taxonomies in WordPress.
 * Version: 1.0.0
-* Author: Your Name
-* Author URI: https://SimpliPlugin.com
+* Author: webbuggs
+* Author URI: https://www.webbuggs.com/
 * Text Domain: taxonomy-enricher
 */
 
