@@ -1,0 +1,15 @@
+.wbgs-gallery-preview {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.wbgs-gallery-preview li {
+    margin-right: 10px;
+}
+.wbgs-gallery-preview img {
+    max-width: 80px;
+    height: auto;
+    border: 1px solid #ccc;
+}
