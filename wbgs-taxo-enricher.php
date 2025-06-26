@@ -1,11 +1,12 @@
 <?php
-/*
-Plugin Name: WBGS TaxoPlus
-Description: Adds custom fields (short description and image gallery) to taxonomy terms.
-Version: 1.2
-Text Domain: wbgs-taxoplus
-Author: Simpliplugin.com
-License: GPLv2 or later
+/**
+* Plugin Name: Taxonomy Enricher
+* Plugin URI: https://SimpliPlugin.com/taxonomy-enricher
+* Description: Adds short description and gallery image fields to all default and custom taxonomies in WordPress.
+* Version: 1.0.0
+* Author: Your Name
+* Author URI: https://SimpliPlugin.com
+* Text Domain: taxonomy-enricher
 */
 
 if (!class_exists('WBGS_TaxoPlus')) {
@@ -53,16 +54,16 @@ if (!class_exists('WBGS_TaxoPlus')) {
         public function wbgs_add_taxonomy_meta_field($taxonomy) {
             ?>
             <div class="form-field">
-                <label for="wbgs_short_description"><?php _e('Short Description', 'wbgs-taxoplus'); ?></label>
+                <label for="wbgs_short_description"><?php _e('Short Description', 'taxonomy-enricher'); ?></label>
                 <textarea name="wbgs_short_description" id="wbgs_short_description" rows="4" cols="50"></textarea>
-                <p class="description"><?php _e('Enter a short description value for this term.', 'wbgs-taxoplus'); ?></p>
+                <p class="description"><?php _e('Enter a short description value for this term.', 'taxonomy-enricher'); ?></p>
             </div>
             <div class="form-field">
-                <label for="wbgs_gallery"><?php _e('Gallery Images', 'wbgs-taxoplus'); ?></label>
-                <button class="button wbgs-add-gallery"><?php _e('Add Images', 'wbgs-taxoplus'); ?></button>
+                <label for="wbgs_gallery"><?php _e('Gallery Images', 'taxonomy-enricher'); ?></label>
+                <button class="button wbgs-add-gallery"><?php _e('Add Images', 'taxonomy-enricher'); ?></button>
                 <ul class="wbgs-gallery-preview"></ul>
                 <input type="hidden" name="wbgs_gallery" id="wbgs_gallery" class="wbgs-gallery" value="">
-                <p class="description"><?php _e('Select multiple images for this term.', 'wbgs-taxoplus'); ?></p>
+                <p class="description"><?php _e('Select multiple images for this term.', 'taxonomy-enricher'); ?></p>
             </div>
             <?php
         }
@@ -74,23 +75,23 @@ if (!class_exists('WBGS_TaxoPlus')) {
 
             ?>
             <tr class="form-field">
-                <th scope="row"><label for="wbgs_short_description"><?php _e('Short Description', 'wbgs-taxoplus'); ?></label></th>
+                <th scope="row"><label for="wbgs_short_description"><?php _e('Short Description', 'taxonomy-enricher'); ?></label></th>
                 <td>
                     <textarea name="wbgs_short_description" id="wbgs_short_description" rows="4" cols="50"><?php echo esc_textarea($desc); ?></textarea>
-                    <p class="description"><?php _e('Update the short description for this term.', 'wbgs-taxoplus'); ?></p>
+                    <p class="description"><?php _e('Update the short description for this term.', 'taxonomy-enricher'); ?></p>
                 </td>
             </tr>
             <tr class="form-field">
-                <th scope="row"><label for="wbgs_gallery"><?php _e('Gallery Images', 'wbgs-taxoplus'); ?></label></th>
+                <th scope="row"><label for="wbgs_gallery"><?php _e('Gallery Images', 'taxonomy-enricher'); ?></label></th>
                 <td>
-                    <button class="button wbgs-add-gallery"><?php _e('Add Images', 'wbgs-taxoplus'); ?></button>
+                    <button class="button wbgs-add-gallery"><?php _e('Add Images', 'taxonomy-enricher'); ?></button>
                     <ul class="wbgs-gallery-preview">
                         <?php foreach ($gallery as $img_id): ?>
                             <li><img src="<?php echo esc_url(wp_get_attachment_image_url($img_id, 'thumbnail')); ?>" /></li>
                         <?php endforeach; ?>
                     </ul>
                    <input type="hidden" name="wbgs_gallery" id="wbgs_gallery" class="wbgs-gallery" value="<?php echo esc_attr(implode(',', $gallery)); ?>">
-                    <p class="description"><?php _e('Update gallery images for this term.', 'wbgs-taxoplus'); ?></p>
+                    <p class="description"><?php _e('Update gallery images for this term.', 'taxonomy-enricher'); ?></p>
                 </td>
             </tr>
             <?php
