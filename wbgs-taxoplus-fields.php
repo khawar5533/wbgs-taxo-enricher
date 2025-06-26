@@ -3,7 +3,9 @@
 Plugin Name: WBGS TaxoPlus
 Description: Adds custom fields (short description and image gallery) to taxonomy terms.
 Version: 1.2
+Text Domain: wbgs-taxoplus
 Author: Simpliplugin.com
+License: GPLv2 or later
 */
 
 if (!class_exists('WBGS_TaxoPlus')) {
@@ -51,16 +53,16 @@ if (!class_exists('WBGS_TaxoPlus')) {
         public function wbgs_add_taxonomy_meta_field($taxonomy) {
             ?>
             <div class="form-field">
-                <label for="wbgs_short_description"><?php _e('Short Description', 'wbgs'); ?></label>
+                <label for="wbgs_short_description"><?php _e('Short Description', 'wbgs-taxoplus'); ?></label>
                 <textarea name="wbgs_short_description" id="wbgs_short_description" rows="4" cols="50"></textarea>
-                <p class="description"><?php _e('Enter a short description value for this term.', 'wbgs'); ?></p>
+                <p class="description"><?php _e('Enter a short description value for this term.', 'wbgs-taxoplus'); ?></p>
             </div>
             <div class="form-field">
-                <label for="wbgs_gallery"><?php _e('Gallery Images', 'wbgs'); ?></label>
-                <button class="button wbgs-add-gallery"><?php _e('Add Images', 'wbgs'); ?></button>
+                <label for="wbgs_gallery"><?php _e('Gallery Images', 'wbgs-taxoplus'); ?></label>
+                <button class="button wbgs-add-gallery"><?php _e('Add Images', 'wbgs-taxoplus'); ?></button>
                 <ul class="wbgs-gallery-preview"></ul>
                 <input type="hidden" name="wbgs_gallery" id="wbgs_gallery" class="wbgs-gallery" value="">
-                <p class="description"><?php _e('Select multiple images for this term.', 'wbgs'); ?></p>
+                <p class="description"><?php _e('Select multiple images for this term.', 'wbgs-taxoplus'); ?></p>
             </div>
             <?php
         }
@@ -72,23 +74,23 @@ if (!class_exists('WBGS_TaxoPlus')) {
 
             ?>
             <tr class="form-field">
-                <th scope="row"><label for="wbgs_short_description"><?php _e('Short Description', 'wbgs'); ?></label></th>
+                <th scope="row"><label for="wbgs_short_description"><?php _e('Short Description', 'wbgs-taxoplus'); ?></label></th>
                 <td>
                     <textarea name="wbgs_short_description" id="wbgs_short_description" rows="4" cols="50"><?php echo esc_textarea($desc); ?></textarea>
-                    <p class="description"><?php _e('Update the short description for this term.', 'wbgs'); ?></p>
+                    <p class="description"><?php _e('Update the short description for this term.', 'wbgs-taxoplus'); ?></p>
                 </td>
             </tr>
             <tr class="form-field">
-                <th scope="row"><label for="wbgs_gallery"><?php _e('Gallery Images', 'wbgs'); ?></label></th>
+                <th scope="row"><label for="wbgs_gallery"><?php _e('Gallery Images', 'wbgs-taxoplus'); ?></label></th>
                 <td>
-                    <button class="button wbgs-add-gallery"><?php _e('Add Images', 'wbgs'); ?></button>
+                    <button class="button wbgs-add-gallery"><?php _e('Add Images', 'wbgs-taxoplus'); ?></button>
                     <ul class="wbgs-gallery-preview">
                         <?php foreach ($gallery as $img_id): ?>
                             <li><img src="<?php echo esc_url(wp_get_attachment_image_url($img_id, 'thumbnail')); ?>" /></li>
                         <?php endforeach; ?>
                     </ul>
                    <input type="hidden" name="wbgs_gallery" id="wbgs_gallery" class="wbgs-gallery" value="<?php echo esc_attr(implode(',', $gallery)); ?>">
-                    <p class="description"><?php _e('Update gallery images for this term.', 'wbgs'); ?></p>
+                    <p class="description"><?php _e('Update gallery images for this term.', 'wbgs-taxoplus'); ?></p>
                 </td>
             </tr>
             <?php
