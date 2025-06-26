@@ -53,19 +53,19 @@ if (!class_exists('WBGS_TaxoPlus')) {
 
             foreach ($taxonomies as $taxonomy) {
                 // Add fields to add/edit forms
-                add_action("{$taxonomy}_add_form_fields", [$this, 'wbgs_add_short_description'], 10, 2);
-                add_action("{$taxonomy}_edit_form_fields", [$this, 'wbgs_edit_short_description'], 10, 2);
+                add_action("{$taxonomy}_add_form_fields", [$this, 'wbgs_add_taxonomy_meta_field'], 10, 2);
+                add_action("{$taxonomy}_edit_form_fields", [$this, 'wbgs_edit_taxonomy_meta_field'], 10, 2);
 
                 // Save custom field value
-                add_action("created_{$taxonomy}", [$this, 'wbgs_save_short_description'], 10, 2);
-                add_action("edited_{$taxonomy}", [$this, 'wbgs_save_short_description'], 10, 2);
+                add_action("created_{$taxonomy}", [$this, 'wbgs_save_taxonomy_meta_field'], 10, 2);
+                add_action("edited_{$taxonomy}", [$this, 'wbgs_save_taxonomy_meta_field'], 10, 2);
             }
         }
 
         /**
          * Add custom field to Add New taxonomy form.
          */
-        public function wbgs_add_short_description($taxonomy) {
+        public function wbgs_add_taxonomy_meta_field($taxonomy) {
             ?>
             <div class="form-field">
                 <label for="wbgs_short_description"><?php _e('Short Description', 'wbgs'); ?></label>
@@ -78,7 +78,7 @@ if (!class_exists('WBGS_TaxoPlus')) {
         /**
          * Edit custom field in Edit taxonomy form.
          */
-        public function wbgs_edit_short_description($term, $taxonomy) {
+        public function wbgs_edit_taxonomy_meta_field($term, $taxonomy) {
             $value = get_term_meta($term->term_id, 'wbgs_short_description', true);
             ?>
             <tr class="form-field">
@@ -94,7 +94,7 @@ if (!class_exists('WBGS_TaxoPlus')) {
         /**
          * Save the custom field when a term is created or edited.
          */
-        public function wbgs_save_short_description($term_id) {
+        public function wbgs_save_taxonomy_meta_field($term_id) {
             if (isset($_POST['wbgs_short_description'])) {
                 update_term_meta($term_id, 'wbgs_short_description', sanitize_text_field($_POST['wbgs_short_description']));
             }
